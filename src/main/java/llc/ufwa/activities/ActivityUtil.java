@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 import llc.ufwa.activities.ActivityUtil.ActivityStatus;
 import llc.ufwa.util.StopWatch;
 
-import org.apache.http.conn.util.InetAddressUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

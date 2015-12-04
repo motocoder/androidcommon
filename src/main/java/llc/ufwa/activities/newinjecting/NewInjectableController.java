@@ -18,7 +18,7 @@ import llc.ufwa.concurrency.SerialExecutor;
 public abstract class NewInjectableController<T extends InjectingDisplay> {
     
     private final AllDisplays<T> displays;
-    final Class<T> displayClass;
+    public final Class<T> displayClass;
     private final Executor configureRunner;
     
     
@@ -39,7 +39,7 @@ public abstract class NewInjectableController<T extends InjectingDisplay> {
     protected abstract void createDisplay(T display);
     
     @SuppressWarnings("unchecked")
-    protected final void createdDisplay(final InjectingDisplay display) {
+    public final void createdDisplay(final InjectingDisplay display) {
         
         if(displayClass.isInstance(display)) {
             
@@ -62,7 +62,7 @@ public abstract class NewInjectableController<T extends InjectingDisplay> {
     }
     
 	@SuppressWarnings("unchecked")
-	protected final void addDisplay(final InjectingDisplay display) {
+    public final void addDisplay(final InjectingDisplay display) {
 	    
 		if(displayClass.isInstance(display)) {
 		    

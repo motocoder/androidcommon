@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 import llc.ufwa.concurrency.Callback;
 import llc.ufwa.concurrency.CallbackFinalizer;
 import llc.ufwa.concurrency.DefaultCallbackFinalizer;
+import llc.ufwa.concurrency.NeverCrashingExecutor;
 import llc.ufwa.concurrency.WeakCallback;
 import android.app.Activity;
 import android.content.Context;
@@ -16,7 +17,7 @@ public abstract class AbstractInjectingActivity extends Activity {
 		
     private final CallbackFinalizer finalizer = new DefaultCallbackFinalizer();
     
-    private final Executor nonUIThread = Executors.newSingleThreadExecutor();
+    private final Executor nonUIThread = new NeverCrashingExecutor(Executors.newSingleThreadExecutor());
     
 	protected abstract Set<InjectableController<?>> getControllers();
 	protected abstract Set<InjectingDisplay> getDisplays();

@@ -21,7 +21,6 @@ public abstract class NewInjectableController<T extends InjectingDisplay> {
     public final Class<T> displayClass;
     private final Executor configureRunner;
     
-    
     public NewInjectableController(
         final Class<T> clazz,
         final SerialExecutor configureRunner
